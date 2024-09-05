@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="order.css">
+    <title>Order Food</title>
+</head>
+<body>
+</div>
+<div class="topnav">
+  <a  href="page1.html">Home</a>
+  <a class="active" href="order.html">Order food</a>
+  <a href="whats.html">What's new </a>
+  <a href="orders.html">Your orders</a>
+  <a href="maps.html">Location</a>
+  <a href="contact.html">Contact</a>
+  <a href="about.html">About</a>
+
+</div>
+    <h1>Menu</h1>
+    <ol>
+       <b> <li>Sandwich: 40</li>
+        <li>Burger: 50</li>
+        <li>Pizza: 70</li>
+       </b>
+    </ol>
+    
+    <div class="haha"><h2>Place Your Order</h2></div>
+    <div class="edit">
+        <table border="1">
+            <tr>
+                <th>
+                    <label for="itemName">Item Name: </label>
+                    <input type="text" id="itemName">
+                    <br>
+                </th>
+                <th>
+                    <label for="quantity">Quantity: </label>
+                    <input type="number" id="quantity">
+                    <br>
+                </th>
+            </tr>
+        </table>
+        <button onclick="calculateTotalPrice()">Calculate Total Price</button>
+        <h4>Note:Ensure that the first letter is capital while typing the item name</h4>
+    </div>
+    <p>Total Price: <span id="totalPrice">0.00</span></p>
+    <script>
+        const menu = {Sandwich: 40,Burger: 50,Pizza: 70};
+        function calculateTotalPrice() {
+            const itemName = document.getElementById("itemName").value;
+            const quantity = parseInt(document.getElementById("quantity").value);
+
+            if (menu[itemName] && !isNaN(quantity) && quantity > 0) 
+            {    
+                const itemPrice = menu[itemName];
+                const totalBill = itemPrice * quantity;
+                document.getElementById("totalPrice").textContent = totalBill.toFixed(2);
+            } 
+            else 
+            {
+                alert("Please enter a valid item name and quantity.");
+            }
+        }
+    </script>
+</body>
+</html>
