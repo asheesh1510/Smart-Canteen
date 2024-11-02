@@ -72,4 +72,10 @@ h2{
       width: 500px;
       height: 300px;
   }
-  
+  footer {
+    padding: 2px;
+    text-align: center;
+    background: #1abc9c;
+    color: white;
+    font-size: 10px;
+  }
